@@ -1,11 +1,10 @@
-#include <stdio.h>
-#include <unixstd.h>
-/**
- * main - A program that prints a line to the std error
- * Return 1 (Success)
- */
+#include <unistd.h>
+
 int main(void)
 {
-	fput("and that piece of art is useful\"  Dora Korpar, 2015-10-19\n", stdout);
-	return (1);
+    const char *str = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+    write(2, str, 59); // 59 is the length of the string including the newline character
+
+    return 1;
 }
+
